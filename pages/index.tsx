@@ -6,7 +6,11 @@ import ServicesOffer from "../components/ServicesOffer";
 import PortFolio from "../components/PortFolio";
 import { NextPageContext } from "next/types";
 
-export default function Home({ isUserKorean }) {
+interface iHomeProps {
+  isUserKorean: boolean;
+}
+
+export default function Home({ isUserKorean }: iHomeProps) {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
@@ -25,8 +29,8 @@ export default function Home({ isUserKorean }) {
           />
           <Introduction isUserKorean={isUserKorean} />
         </section>
-        <ServicesOffer />
-        <PortFolio />
+        <ServicesOffer isUserKorean={isUserKorean} />
+        <PortFolio isUserKorean={isUserKorean} />
       </main>
     </div>
   );
@@ -35,10 +39,10 @@ export default function Home({ isUserKorean }) {
 export async function getServerSideProps({ req }: NextPageContext) {
   const userlanguages =
     typeof navigator === "undefined"
-      ? req.headers["accept-language"].split(",")
+      ? req?.headers["accept-language"]?.split(",")
       : ["en"];
 
-  const isUserKorean = userlanguages.includes("ko-KR") ? true : false;
+  const isUserKorean = userlanguages?.includes("ko-KR") ? true : false;
 
   return { props: { isUserKorean } };
 }

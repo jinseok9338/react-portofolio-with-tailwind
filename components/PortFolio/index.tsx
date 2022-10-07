@@ -1,12 +1,6 @@
 import Image from "next/image";
-import web1 from "../../public/web1.png";
-import web2 from "../../public/web2.png";
-import web3 from "../../public/web3.png";
-import web4 from "../../public/web4.png";
-import web5 from "../../public/web5.png";
-import web6 from "../../public/web6.png";
 
-const PortFolio = () => {
+const PortFolio = ({ isUserKorean }: { isUserKorean: boolean }) => {
   return (
     <section className="py-10">
       <div>
@@ -31,7 +25,7 @@ const PortFolio = () => {
             width={"100%"}
             height={"100%"}
             layout="responsive"
-            src={web1}
+            src={"/web1.png"}
             alt=""
           />
         </div>
@@ -41,7 +35,7 @@ const PortFolio = () => {
             width={"100%"}
             height={"100%"}
             layout="responsive"
-            src={web2}
+            src={"/web2.png"}
             alt=""
           />
         </div>
@@ -51,7 +45,7 @@ const PortFolio = () => {
             width={"100%"}
             height={"100%"}
             layout="responsive"
-            src={web3}
+            src={"/web3.png"}
             alt=""
           />
         </div>
@@ -61,7 +55,7 @@ const PortFolio = () => {
             width={"100%"}
             height={"100%"}
             layout="responsive"
-            src={web4}
+            src={"/web4.png"}
             alt=""
           />
         </div>
@@ -71,7 +65,7 @@ const PortFolio = () => {
             width={"100%"}
             height={"100%"}
             layout="responsive"
-            src={web5}
+            src={"/web5.png"}
             alt=""
           />
         </div>
@@ -81,7 +75,7 @@ const PortFolio = () => {
             width={"100%"}
             height={"100%"}
             layout="responsive"
-            src={web6}
+            src={"/web6.png"}
             alt=""
           />
         </div>
